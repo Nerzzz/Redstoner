@@ -14,7 +14,8 @@ let grid = [
 function loadGame(){
     const lampPos = Math.floor(Math.random() * (25 - 0 + 1)) + 0;
     grid[lampPos] = "redstoneLamp";
-    document.querySelectorAll(".cell")[lampPos].innerHTML = '<img src="./assets/images/blocks/redstone_lamp.png">';
+    document.querySelectorAll(".cell")[lampPos].innerHTML = '<img src="./assets/images/blocks/lit_redstone_lamp.png">';
+    document.querySelectorAll(".cell")[lampPos].classList.add("light-on");
 
     const rbPos = Math.floor(Math.random() * (25 - 0 + 1)) + 0;
     grid[rbPos] = "redstoneBlock";
