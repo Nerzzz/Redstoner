@@ -20,6 +20,7 @@
     box-shadow: 0 0 50px #0000007a;
 
     .cell{
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -29,22 +30,33 @@
         image-rendering: pixelated;
         
         img{
+            position: absolute;
             width: 100%;
             height: 100%;
             filter: drop-shadow(0 0 10px #2e2e2e7a);
         }
+        span{
+            z-index: 200;
+            color: #fff;
+        }
+    }
+
+    img {
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
     }
 }
 
 .light-on{
-    filter: drop-shadow(0 0 20px #f7d462);
+    filter: drop-shadow(0px 0px 20px #f7d462);
+    z-index: 2000;
 }
 
 body{
     background-image: url("/assets/images/blocks/white_concrete_powder.png");
     background-repeat: repeat;
     image-rendering: pixelated;
-    background-size: 5%;
+    background-size: 10dvh;
 }
 
 main{
@@ -52,10 +64,42 @@ main{
     justify-content: center;
     align-items: center;
     height: 100dvh;
+    overflow-y: auto;
     flex: 1;
 }
-        
-img {
-    image-rendering: pixelated;
-    image-rendering: crisp-edges;
+
+#restart-game{
+    background-color: #3c8527;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 16pt;
+    padding: 6px 8px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+}
+
+.rdpw-info{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background-color: #00000070;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    
+    img{
+        height: 32px;
+        width: 32px;
+    }
+
+    span{
+        font-size: 18pt;
+        color: #fff;
+    }
 }
